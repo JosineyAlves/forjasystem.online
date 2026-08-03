@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>73 Libros de la Biblia para Niños</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --indigo:#23406B;
+    --indigo-deep:#182b49;
+    --parchment:#FBF3E3;
+    --parchment-2:#F5EAD4;
+    --card:#FFFDF8;
+    --gold:#C99A3F;
+    --gold-light:#E8C97A;
+    --seal:#B5432E;
+    --seal-dark:#963725;
+    --sage:#6E8B6A;
+    --ink:#21283B;
+    --ink-soft:#4b5266;
+    --line:#E4D6B4;
+    --radius:22px;
+    --wrap:1120px;
+    --wrap-narrow:760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Figtree',sans-serif;
+    background:var(--parchment);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    color:var(--indigo);
+    line-height:1.15;
+    margin:0 0 .5em;
+    font-weight:600;
+  }
+  p{margin:0 0 1em;}
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px;}
+  .wrap-narrow{max-width:var(--wrap-narrow);margin:0 auto;padding:0 24px;}
+  section{padding:76px 0;}
+  @media(max-width:640px){ section{padding:52px 0;} }
+
+  /* Eyebrow / waypoint */
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Figtree',sans-serif;font-weight:800;
+    font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:14px;
+  }
+  .eyebrow-badge{
+    width:34px;height:34px;border-radius:50%;
+    background:var(--card);border:1.5px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 2px 0 rgba(201,154,63,.25);
+    position:relative;
+  }
+  .eyebrow-badge::after{
+    content:'';position:absolute;top:100%;left:50%;
+    width:0;height:34px;border-left:2px dashed var(--gold-light);
+    transform:translateX(-50%);
+  }
+  .eyebrow-badge svg{width:17px;height:17px;stroke:var(--indigo);}
+  .section-head{max-width:640px;margin:0 auto 44px;text-align:center;}
+  .section-head h2{font-size:clamp(1.5rem,3vw,2.15rem);}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:16px 28px;border-radius:100px;
+    font-family:'Figtree',sans-serif;font-weight:700;font-size:1rem;
+    text-decoration:none;cursor:pointer;border:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:var(--seal);color:#fff;
+    box-shadow:0 6px 0 var(--seal-dark), 0 10px 18px rgba(181,67,46,.25);
+  }
+  .btn-primary:hover{box-shadow:0 4px 0 var(--seal-dark), 0 8px 14px rgba(181,67,46,.28);}
+  .btn-primary:active{transform:translateY(2px);box-shadow:0 2px 0 var(--seal-dark);}
+  .btn-small{
+    background:transparent;color:var(--indigo);border:1.5px solid var(--indigo);
+    padding:10px 20px;font-size:.9rem;
+  }
+  .btn-large{padding:19px 36px;font-size:1.08rem;}
+  .btn-outline{
+    background:transparent;border:1.5px solid var(--indigo);color:var(--indigo);
+  }
+
+  /* Announcement bar */
+  .announce{
+    background:var(--indigo-deep);color:#F5E7C6;
+    text-align:center;font-size:.85rem;font-weight:600;
+    padding:10px 16px;letter-spacing:.02em;
+  }
+
+  /* Header */
+  header.site{
+    position:sticky;top:0;z-index:40;
+    background:rgba(251,243,227,.9);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;
+  }
+  .brand{font-family:'Fraunces',serif;font-weight:600;color:var(--indigo);font-size:1.05rem;}
+  .brand em{font-style:italic;color:var(--seal);}
+  .brand-mark{color:var(--gold);margin-right:4px;}
+
+  /* Hero */
+  .hero{padding-top:56px;padding-bottom:40px;}
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;
+  }
+  @media(max-width:900px){ .hero-grid{grid-template-columns:1fr;gap:36px;text-align:center;} }
+  .badge-pill{
+    display:inline-block;background:var(--card);border:1px solid var(--gold);
+    color:var(--indigo);font-weight:700;font-size:.82rem;
+    padding:8px 16px;border-radius:100px;margin-bottom:18px;
+  }
+  .hero h1{font-size:clamp(1.6rem,3.4vw,2.35rem);}
+  .hero h1 .hl{color:var(--seal);font-style:italic;}
+  .lede{font-size:1.12rem;color:var(--ink-soft);max-width:480px;}
+  @media(max-width:900px){ .lede{margin-left:auto;margin-right:auto;} }
+  .microcopy{font-size:.85rem;color:var(--ink-soft);margin-top:14px;}
+
+  .hero-art{position:relative;display:flex;justify-content:center;}
+  .hero-art::before{
+    content:'';position:absolute;top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:120%;height:120%;
+    background:radial-gradient(circle, rgba(0,0,0,.28) 0%, rgba(0,0,0,.14) 45%, rgba(0,0,0,0) 72%);
+    filter:blur(2px);
+    z-index:0;
+  }
+  .hero-card{
+    padding:0;position:relative;z-index:1;
+  }
+  .hero-card svg{border-radius:14px;}
+  .hero-card img{width:auto;max-width:100%;max-height:550px;margin:0 auto;object-fit:contain;position:relative;z-index:1;}
+
+  /* Marquee testimonials */
+  .marquee-wrap{
+    background:var(--indigo);padding:34px 0;overflow:hidden;
+  }
+  .marquee{overflow:hidden;position:relative;
+    mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  }
+  .marquee-track{
+    display:flex;gap:20px;width:max-content;
+    animation:scroll 42s linear infinite;
+  }
+  .marquee:hover .marquee-track{animation-play-state:paused;}
+  @keyframes scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .test-chip{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    color:#EDE6D2;border-radius:16px;padding:18px 22px;width:320px;flex:none;
+  }
+  .test-chip p{font-size:.92rem;margin-bottom:10px;color:#F2ECDA;}
+  .test-chip cite{font-style:normal;font-size:.8rem;color:var(--gold-light);font-weight:700;}
+  @media(prefers-reduced-motion:reduce){ .marquee-track{animation:none;overflow-x:auto;} }
+
+  /* Intro */
+  .intro-grid{
+    display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center;
+  }
+  @media(max-width:860px){ .intro-grid{grid-template-columns:1fr;} }
+  .intro-art{
+    padding:20px;text-align:center;
+  }
+  .intro-art img{width:auto;max-width:100%;max-height:380px;margin:0 auto;object-fit:contain;}
+  .callout{
+    background:var(--parchment-2);border-left:4px solid var(--gold);
+    padding:16px 20px;border-radius:0 12px 12px 0;font-weight:600;color:var(--indigo);
+  }
+
+  /* Pains */
+  .pains-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;
+  }
+  .pain-card{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;
+  }
+  .pain-card .icon{font-size:1.7rem;margin-bottom:10px;display:block;}
+  .pain-card h3{font-size:1.02rem;font-family:'Figtree',sans-serif;font-weight:800;color:var(--indigo);}
+  .pain-card p{font-size:.92rem;color:var(--ink-soft);margin:0;}
+
+  /* Verse */
+  .verse-wrap{background:var(--indigo);color:#F3ECDA;text-align:center;}
+  .verse-wrap blockquote{
+    max-width:680px;margin:0 auto;font-family:'Fraunces',serif;
+    font-style:italic;font-size:clamp(1.2rem,2.6vw,1.55rem);font-weight:500;
+  }
+  .verse-wrap cite{display:block;margin-top:16px;font-style:normal;font-size:.85rem;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--gold-light);font-weight:700;}
+
+  /* Preview gallery */
+  .preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media(max-width:800px){ .preview-grid{grid-template-columns:1fr;} }
+  .preview-card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:10px;text-align:center;
+  }
+  .preview-card img{border-radius:10px;width:100%;aspect-ratio:3/4;object-fit:contain;}
+  .preview-card p{font-size:.85rem;color:var(--ink-soft);margin:10px 0 4px;font-weight:700;}
+
+  /* Features */
+  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media(max-width:900px){ .features-grid{grid-template-columns:1fr;} }
+  .feature-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px;
+  }
+  .feature-card .icon-badge{
+    width:52px;height:52px;border-radius:14px;background:var(--parchment-2);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+    font-size:1.5rem;
+  }
+  .feature-card h3{font-size:1.15rem;}
+  .feature-card ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:.92rem;}
+  .feature-card li{margin-bottom:6px;}
+
+  /* Bonuses */
+  .bonus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  @media(max-width:800px){ .bonus-grid{grid-template-columns:1fr;} }
+  .bonus-card{
+    background:var(--card);border:2px solid var(--gold);border-radius:var(--radius);
+    padding:30px;position:relative;
+  }
+  .bonus-card img{
+    width:auto;max-width:100%;max-height:380px;display:block;margin:0 auto 16px;
+    border-radius:12px;object-fit:contain;
+  }
+  .bonus-tag{
+    position:absolute;top:-14px;left:26px;background:var(--gold);color:#fff;
+    font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+    padding:6px 14px;border-radius:100px;
+  }
+  .bonus-card h3{margin-top:8px;font-size:1.2rem;}
+  .bonus-value{
+    display:inline-flex;gap:8px;align-items:baseline;margin-top:14px;font-size:.88rem;
+  }
+  .bonus-value .was{color:#9a8c6a;text-decoration:line-through;}
+  .bonus-value .now{color:var(--sage);font-weight:800;}
+
+  /* Offer */
+  .offer-grid{
+    display:grid;grid-template-columns:1fr 1.08fr;gap:26px;align-items:stretch;
+    max-width:920px;margin:0 auto;
+  }
+  @media(max-width:800px){ .offer-grid{grid-template-columns:1fr;} }
+  .offer-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:32px;display:flex;flex-direction:column;
+  }
+  .offer-card.featured{
+    border:2px solid var(--seal);box-shadow:0 18px 30px rgba(181,67,46,.14);
+    position:relative;
+  }
+  .offer-card .most-chosen{
+    position:absolute;top:-15px;left:50%;transform:translateX(-50%);
+    background:var(--seal);color:#fff;font-size:.75rem;font-weight:800;
+    text-transform:uppercase;letter-spacing:.05em;padding:6px 16px;border-radius:100px;
+    white-space:nowrap;
+  }
+  .offer-mockup{
+    width:auto;max-width:100%;max-height:220px;object-fit:contain;
+    display:block;margin:0 auto 14px;border-radius:12px;
+  }
+  .offer-card h3{font-size:1.2rem;}
+  .offer-card ul{list-style:none;padding:0;margin:16px 0;flex:1;}
+  .offer-card li{padding:7px 0;border-bottom:1px dashed var(--line);font-size:.94rem;color:var(--ink-soft);}
+  .offer-card li:last-child{border-bottom:none;}
+  .offer-card li b{color:var(--indigo);}
+  .price-row{margin:18px 0;}
+  .price-was{color:#9a8c6a;text-decoration:line-through;font-size:.95rem;}
+  .price-now{font-family:'Fraunces',serif;font-size:2.1rem;color:var(--seal);font-weight:700;}
+  .price-now span{font-size:1rem;font-family:'Figtree',sans-serif;font-weight:600;color:var(--ink-soft);}
+  .upsell-note{
+    text-align:center;font-size:.9rem;color:var(--seal-dark);font-weight:700;margin:22px 0 6px;
+  }
+  .offer-note{text-align:center;font-size:.82rem;color:var(--ink-soft);margin-top:22px;}
+  .payment-badge{
+    text-align:center;margin-top:14px;font-size:.85rem;color:var(--indigo);font-weight:700;
+  }
+
+  /* Guarantee */
+  .guarantee-box{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:38px;text-align:center;
+  }
+  .guarantee-box .icon-badge{
+    width:60px;height:60px;border-radius:50%;background:var(--parchment-2);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.8rem;
+  }
+
+  /* Testimonials 2 */
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:860px){ .test-grid{grid-template-columns:1fr;} }
+  .test-card{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;
+  }
+  .test-card p{font-size:.93rem;color:var(--ink-soft);}
+  .test-card cite{font-style:normal;font-size:.85rem;font-weight:800;color:var(--indigo);}
+
+  /* FAQ */
+  .accordion-item{border-bottom:1px solid var(--line);}
+  .accordion-item button{
+    width:100%;text-align:left;background:none;border:none;cursor:pointer;
+    padding:18px 0;font-family:'Figtree',sans-serif;font-weight:700;font-size:1rem;
+    color:var(--indigo);display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  .accordion-item .plus{font-size:1.4rem;color:var(--gold);transition:transform .2s ease;}
+  .accordion-item.open .plus{transform:rotate(45deg);}
+  .accordion-item .panel{
+    max-height:0;overflow:hidden;transition:max-height .25s ease;
+    font-size:.94rem;color:var(--ink-soft);
+  }
+  .accordion-item .panel-inner{padding-bottom:18px;}
+  .accordion-item.open .panel{max-height:220px;}
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(180deg,var(--indigo),var(--indigo-deep));
+    color:#F5EAD4;text-align:center;
+  }
+  .final-cta h2{color:#fff;}
+  .final-cta p{color:#D9CDAE;max-width:520px;margin:0 auto 26px;}
+  .final-cta .microcopy{color:#C9BC98;margin-top:22px;}
+
+  /* Footer */
+  footer{padding:40px 0;text-align:center;font-size:.82rem;color:var(--ink-soft);}
+  footer .disclaimer{max-width:520px;margin:10px auto 0;font-size:.78rem;}
+
+  .center{text-align:center;}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R38GHGEJ70"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R38GHGEJ70');
+</script>
+</head>
+<body>
+
+<div class="announce">🕒 Oferta por tiempo limitado — descuento especial solo hoy</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="badge-pill">✝️ Recurso 100% Católico, conforme al Canon de la Iglesia</span>
+        <h1>Tu hijo memoriza cada personaje de su serie favorita... <span class="hl">¿pero sabe quién es Moisés, David o Jonás?</span></h1>
+        <p class="lede">No es porque no le importe la fe — es que nadie le mostró la Biblia de una forma tan interesante como sus pantallas. Hasta ahora.</p>
+        <a href="#oferta" class="btn btn-primary btn-large">¡Quiero recibir el material ahora! 📖</a>
+        <p class="microcopy">Descarga digital inmediata · Lista para imprimir en casa · Compra 100% segura</p>
+      </div>
+      <div class="hero-art">
+        <div class="hero-card">
+          <img src="assets/mockup-hero.webp" alt="Pack completo: 73 Libros de la Biblia para Niños + 2 bonos">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE TESTIMONIALS -->
+  <div class="marquee-wrap">
+    <div class="wrap section-head" style="margin-bottom:28px;">
+      <span class="eyebrow"><span class="eyebrow-badge">💬</span>Historias reales</span>
+      <h2 style="color:#fff;">Lo que dicen padres y catequistas</h2>
+    </div>
+    <div class="marquee">
+      <div class="marquee-track" id="marqueeTrack">
+        <div class="test-chip"><p>"Material muy bueno y fácil de leer para los niños, lo recomiendo."</p><cite>Claudia R. — CDMX</cite></div>
+        <div class="test-chip"><p>"Me encantó. Lo imprimí y encuaderné para mis hijas, también amaron el libro para colorear."</p><cite>Rosa M. — Buenos Aires</cite></div>
+        <div class="test-chip"><p>"Me ayudó mucho en la catequesis con los niños, se interesan más cuando hay dibujos."</p><cite>Hna. Fernanda L. — Bogotá</cite></div>
+        <div class="test-chip"><p>"Compré y me sorprendió la calidad del material, lo recomiendo."</p><cite>Jorge P. — Lima</cite></div>
+        <div class="test-chip"><p>"Pueden comprar sin miedo, el material es excelente, mi hijo lo amó y le quedó más fácil entender la Biblia."</p><cite>Ricardo M. — Bogotá</cite></div>
+        <div class="test-chip"><p>"Hasta yo estoy usando el material para mi propia lectura, me ayuda mucho."</p><cite>Marisol T. — Guadalajara</cite></div>
+        <div class="test-chip"><p>"Excelente material, muy completo y bien explicado para los niños."</p><cite>Andrea V. — Santiago</cite></div>
+        <div class="test-chip"><p>"Lo uso con mis nietos cada domingo, quedaron encantados."</p><cite>Guadalupe S. — CDMX</cite></div>
+        <!-- duplicado para loop -->
+        <div class="test-chip"><p>"Material muy bueno y fácil de leer para los niños, lo recomiendo."</p><cite>Claudia R. — CDMX</cite></div>
+        <div class="test-chip"><p>"Me encantó. Lo imprimí y encuaderné para mis hijas, también amaron el libro para colorear."</p><cite>Rosa M. — Buenos Aires</cite></div>
+        <div class="test-chip"><p>"Me ayudó mucho en la catequesis con los niños, se interesan más cuando hay dibujos."</p><cite>Hna. Fernanda L. — Bogotá</cite></div>
+        <div class="test-chip"><p>"Compré y me sorprendió la calidad del material, lo recomiendo."</p><cite>Jorge P. — Lima</cite></div>
+        <div class="test-chip"><p>"Pueden comprar sin miedo, el material es excelente, mi hijo lo amó y le quedó más fácil entender la Biblia."</p><cite>Ricardo M. — Bogotá</cite></div>
+        <div class="test-chip"><p>"Hasta yo estoy usando el material para mi propia lectura, me ayuda mucho."</p><cite>Marisol T. — Guadalajara</cite></div>
+        <div class="test-chip"><p>"Excelente material, muy completo y bien explicado para los niños."</p><cite>Andrea V. — Santiago</cite></div>
+        <div class="test-chip"><p>"Lo uso con mis nietos cada domingo, quedaron encantados."</p><cite>Guadalupe S. — CDMX</cite></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="wrap intro-grid">
+      <div class="intro-art">
+        <img src="assets/mockup-basica.webp" alt="73 Libros de la Biblia para Niños">
+      </div>
+      <div class="intro-copy">
+        <span class="eyebrow"><span class="eyebrow-badge">📖</span>Qué es</span>
+        <h2>73 Libros de la Biblia para Niños</h2>
+        <p>Es una colección de mapas visuales, creada especialmente para que los niños desde los 5 años comprendan, de forma clara y entretenida, cada uno de los 73 libros de la Biblia Católica.</p>
+        <p>Con lenguaje simple, personajes ilustrados y la enseñanza principal de cada libro, tu hijo podrá explorar la Sagrada Escritura sin sentirla difícil, lejana o aburrida.</p>
+        <p class="callout">Y lo mejor: es un material para imprimir, tocar y colorear — una alternativa real a otra hora más de pantalla, sin perder nada de diversión.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAINS -->
+  <section class="pains">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="eyebrow-badge">💭</span>La realidad</span>
+        <h2>¿Sientes que quieres enseñarle la Biblia a tus niños, pero no sabes por dónde empezar?</h2>
+      </div>
+      <div class="pains-grid">
+        <div class="pain-card"><span class="icon">😕</span><h3>Se aburre antes de empezar</h3><p>Un texto largo y sin imágenes hace que los niños pierdan el interés en segundos.</p></div>
+        <div class="pain-card"><span class="icon">🧩</span><h3>No sabes cómo explicarlo</h3><p>Muchos padres posponen algo tan importante por no sentirse lo bastante preparados.</p></div>
+        <div class="pain-card"><span class="icon">🔗</span><h3>Catequesis y casa no se conectan</h3><p>Sin apoyo visual, cuesta relacionar lo que escuchan el domingo con su vida diaria.</p></div>
+        <div class="pain-card"><span class="icon">📱</span><h3>Otra pantalla no es la solución</h3><p>Quieres alejarlo del celular, pero no encuentras algo igual de entretenido que enseñe.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERSE -->
+  <div class="verse-wrap">
+    <div class="wrap-narrow">
+      <blockquote>&ldquo;Dejad que los niños se acerquen a mí, y no se lo impidáis, porque de ellos es el Reino de los Cielos.&rdquo;
+        <cite>Mateo 19:14</cite>
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- PREVIEW GALLERY -->
+  <section class="preview">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="eyebrow-badge">👀</span>Un vistazo real</span>
+        <h2>Así se ve por dentro</h2>
+      </div>
+      <div class="preview-grid">
+        <div class="preview-card">
+          <img src="assets/pagina-genesis.webp" alt="Página del libro de Génesis">
+          <p>Génesis</p>
+        </div>
+        <div class="preview-card">
+          <img src="assets/pagina-josue.webp" alt="Página del libro de Josué">
+          <p>Josué</p>
+        </div>
+        <div class="preview-card">
+          <img src="assets/pagina-deuteronomio.webp" alt="Página del libro de Deuteronomio">
+          <p>Deuteronomio</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="eyebrow-badge">🗺️</span>La solución</span>
+        <h2>Un mapa visual para que aprendan jugando, viendo y descubriendo</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="icon-badge">🗺️</div>
+          <h3>Mapa de los 73 Libros para Niños</h3>
+          <ul>
+            <li>Resumen del libro en lenguaje simple</li>
+            <li>Versículo principal y personajes importantes</li>
+            <li>Capítulos explicados por bloques</li>
+            <li>Lecciones clave para la vida diaria</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <div class="icon-badge">📜</div>
+          <h3>Línea del Tiempo Bíblica Ilustrada</h3>
+          <ul>
+            <li>De la Creación a la vida de Jesús</li>
+            <li>Una sola línea visual, fácil de seguir</li>
+            <li>Entienden qué pasó primero y por qué</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <div class="icon-badge">✨</div>
+          <h3>Mapa de la Familia de Dios</h3>
+          <ul>
+            <li>Antiguo y Nuevo Testamento explicados</li>
+            <li>Cómo se conectan todas las historias</li>
+            <li>Una sola gran historia: el amor de Dios</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONUSES -->
+  <section class="bonuses">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="eyebrow-badge">🎁</span>Regalos exclusivos</span>
+        <h2>Y no se queda ahí…</h2>
+      </div>
+      <div class="bonus-grid">
+        <div class="bonus-card">
+          <span class="bonus-tag">Bono especial #1</span>
+          <img src="assets/bonus-1-colorear.webp" alt="Nuevo Testamento - Libro para colorear">
+          <h3>Nuevo Testamento — Libro para Colorear</h3>
+          <p>26 libros para explorar y colorear, de 4 a 10 años. Aprende, colorea y crece en la fe — perfecto para el hogar, la catequesis y momentos de tranquilidad.</p>
+          <div class="bonus-value"><span class="was">$19 USD</span><span class="now">¡Gratis hoy!</span></div>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-tag">Bono especial #2</span>
+          <img src="assets/bonus-2-detectives.webp" alt="Detectives de la Biblia">
+          <h3>Detectives de la Biblia</h3>
+          <p>16 páginas imprimibles para que tus niños (5-9 años) aprendan a encontrar libros, capítulos y versículos mientras resuelven misiones, sopas de letras y desafíos bíblicos.</p>
+          <div class="bonus-value"><span class="was">$19 USD</span><span class="now">¡Gratis hoy!</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section id="oferta" class="offer">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="eyebrow-badge">✝</span>Tu acceso</span>
+        <h2>Elige tu opción</h2>
+      </div>
+      <div class="offer-grid">
+        <div class="offer-card">
+          <img src="assets/mockup-basica.webp" alt="Mockup del libro 73 Libros de la Biblia para Niños" class="offer-mockup">
+          <h3>Oferta Básica</h3>
+          <ul>
+            <li>Mapa completo de los <b>73 libros</b>, ilustrado</li>
+            <li>Línea del Tiempo Bíblica</li>
+            <li>Mapa de la Familia de Dios</li>
+            <li>Acceso inmediato, en celular o computadora</li>
+          </ul>
+          <div class="price-row">
+            <div class="price-was">$29.70 USD</div>
+            <div class="price-now">$5.90 <span>USD</span></div>
+          </div>
+          <a href="https://pay.hotmart.com/U106824473J?off=ht8gwhlp" class="btn btn-outline">Quiero la Oferta Básica</a>
+        </div>
+        <div class="offer-card featured">
+          <span class="most-chosen">95% elige esta opción</span>
+          <img src="assets/mockup-completo.webp" alt="Mockup del pack completo: 73 Libros de la Biblia para Niños + 2 bonos" class="offer-mockup">
+          <h3>⭐ Super Oferta</h3>
+          <ul>
+            <li>Todo lo de la Oferta Básica</li>
+            <li>🎁 Nuevo Testamento — Libro para Colorear</li>
+            <li>🎁 Detectives de la Biblia</li>
+            <li>Acceso <b>de por vida</b></li>
+          </ul>
+          <div class="price-row">
+            <div class="price-was">$67.70 USD</div>
+            <div class="price-now">$9.90 <span>USD</span></div>
+          </div>
+          <a href="https://pay.hotmart.com/U106824473J?off=7y4f2twc" class="btn btn-primary">Quiero la Super Oferta</a>
+        </div>
+      </div>
+      <p class="offer-note">*Precios de referencia en USD — se convierten automáticamente a tu moneda local en el checkout.</p>
+      <p class="payment-badge">Pago 100% seguro · Garantía de 30 días</p>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="guarantee">
+    <div class="wrap-narrow">
+      <div class="guarantee-box">
+        <div class="icon-badge">🛡️</div>
+        <h3>Garantía de Satisfacción de 30 Días</h3>
+        <p>Nuestra prioridad es ayudarte a acercar a los más pequeños a la fe católica de una manera clara y amorosa. Si dentro de los primeros 30 días sientes que este material no cumplió lo que esperabas, escríbenos y te devolvemos el 100% de tu dinero. Sin preguntas, sin complicaciones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="wrap-narrow">
+      <div class="section-head">
+        <span class="eyebrow"><span class="eyebrow-badge">❓</span>Dudas frecuentes</span>
+        <h2>Preguntas frecuentes</h2>
+      </div>
+      <div class="accordion" id="accordion">
+        <div class="accordion-item">
+          <button>¿A partir de qué edad pueden usarlo los niños?<span class="plus">+</span></button>
+          <div class="panel"><div class="panel-inner">Está diseñado para niños desde los 5 hasta los 12 años, con lenguaje simple e ilustraciones para todas las edades de esa etapa.</div></div>
+        </div>
+        <div class="accordion-item">
+          <button>¿Por qué son 73 libros y no 66?<span class="plus">+</span></button>
+          <div class="panel"><div class="panel-inner">Somos fieles a la tradición y al Magisterio de la Iglesia Católica. La Biblia Católica contiene 73 libros, incluyendo los 7 deuterocanónicos (Tobías, Judit, Sabiduría, Eclesiástico, Baruc, 1 y 2 Macabeos).</div></div>
+        </div>
+        <div class="accordion-item">
+          <button>¿El producto es físico o digital?<span class="plus">+</span></button>
+          <div class="panel"><div class="panel-inner">Es 100% digital. Recibes un PDF de alta resolución, listo para ver en celular, tablet o computadora, y también para imprimir en casa.</div></div>
+        </div>
+        <div class="accordion-item">
+          <button>¿Sirve para catequesis o escuela dominical?<span class="plus">+</span></button>
+          <div class="panel"><div class="panel-inner">Sí. Es ideal tanto para uso en casa con tus hijos como para catequistas que buscan un recurso visual y didáctico para sus clases.</div></div>
+        </div>
+        <div class="accordion-item">
+          <button>¿Cómo recibo el material después de comprar?<span class="plus">+</span></button>
+          <div class="panel"><div class="panel-inner">Inmediatamente después del pago recibes un correo con acceso a todos los archivos digitales, disponibles para descargar cuando quieras.</div></div>
+        </div>
+        <div class="accordion-item">
+          <button>¿Qué pasa si no estoy conforme?<span class="plus">+</span></button>
+          <div class="panel"><div class="panel-inner">Cuentas con 30 días de garantía incondicional. Si no te ayudó, te devolvemos el 100% de tu dinero.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="wrap center">
+      <h2>Comienza hoy el camino de tus niños por la Palabra de Dios</h2>
+      <p>No dejes para mañana la oportunidad de sembrar la fe en el corazón de los más pequeños, de una forma que ellos realmente van a recordar y disfrutar.</p>
+      <a href="#oferta" class="btn btn-primary btn-large">¡Quiero recibir el material ahora! 📖</a>
+      <p class="microcopy">🔒 Pago 100% seguro · Garantía de 30 días</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong>73 Libros de la Biblia para Niños</strong><br>© 2026. Todos los derechos reservados.</div>
+    <p class="disclaimer">Este producto no está afiliado oficialmente a ninguna institución eclesiástica. Contenido basado en el Canon de la Biblia Católica.</p>
+    <p class="disclaimer"><a href="politica-privacidad.html">Política de Privacidad</a> · <a href="terminos-condiciones.html">Términos y Condiciones</a></p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.accordion-item button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.accordion-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.accordion-item').forEach(function(i){ i.classList.remove('open'); });
+      if(!wasOpen){ item.classList.add('open'); }
+    });
+  });
+</script>
+
+</body>
+</html>
